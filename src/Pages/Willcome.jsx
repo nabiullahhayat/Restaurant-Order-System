@@ -32,6 +32,7 @@ function Welcome() {
         >
           Order Now
         </Link>
+        <Link to="/login">Login</Link>
       </div>
     </div>
   );

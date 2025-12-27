@@ -41,10 +41,10 @@ function Drinks() {
 
   return (
     <div className="min-h-screen bg-gray-100 px-4 pb-10">
-      <title>Drinks</title>
+      <title>Lunch & Dinner</title>
     
       <div className="flex flex-col sm:flex-row items-center justify-between gap-4 py-6">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-yellow-600">Drinks</h1>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-yellow-600">Lunch & Dinner</h1>
 
         <div className="flex items-center gap-4">
           <select
