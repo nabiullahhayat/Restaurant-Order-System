@@ -7,8 +7,8 @@ import LunchAndDinner from './Components/LunchAndDinner'
 import Drinks from './Components/Drinks'
 import MenusPage from './Pages/MenusPage'
 import AdminPenal from './Admin/AdminPenal'
-import Login from './Pages/login'
 import foodsData from './Data/foods.json'
+import SignUp from './Pages/SignUp'
 function App() {
     const [foods, setFoods] = useState(foodsData);
   return (
@@ -21,7 +21,7 @@ function App() {
         <Route path='/breakfast' element={<BrekFast foods = {foods} />}></Route>
         <Route path='/lunch' element={<LunchAndDinner foods = {foods} />}></Route>
         <Route path='/drinks' element={<Drinks/>}></Route>
-        <Route path='/login' element={<Login />}></Route>
+        <Route path='/login' element={<SignUp />}></Route>
       </Routes>
         
     </div>

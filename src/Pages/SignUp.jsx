@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function Login() {
+function SignUp() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -25,7 +25,7 @@ function Login() {
     }
   return (
    <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
-    <title>Login Form</title>
+    <title> SignUp Form</title>
   <div className="w-full max-w-md bg-white rounded-3xl shadow-2xl overflow-hidden p-8 sm:p-10 relative">
     
    
@@ -46,4 +46,4 @@ function Login() {
 
     );  }
 
-export default Login;
+export default SignUp;
