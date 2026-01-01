@@ -43,6 +43,8 @@ function AdminPanel() {
 
       console.log(foodData)
         }
+  
+
 
   const deletFood = (foodId) => {
     const updateFoods = enterFoodData.filter(food => food.id !== foodId)
@@ -67,6 +69,28 @@ function AdminPanel() {
     setModal("remove");
     
   };
+
+
+  const updateFood = () => {
+  const updatedFoods = enterFoodData.map((food) =>
+    food.id === selectedFood.id
+      ? {
+          ...food,
+          name,
+          price,
+          category,
+          image,
+        }
+      : food
+  );
+
+  setEnterFoodData(updatedFoods);
+  localStorage.setItem("FoodData", JSON.stringify(updatedFoods));
+
+  setModal(null);
+  setSelectedFood(null);
+};
+
 
 
 
@@ -194,21 +218,55 @@ function AdminPanel() {
 
            
             {modal === "edit" && selectedFood && (
-             <div className="flex flex-col space-y-4">
-                <h2 className="text-2xl font-bold text-blue-600 text-center">Edit Food</h2>
-                <input type="text" placeholder="Search Food" className="border-blue-600 border-b-2 text-black p-2 outline-none" />
-                <input type="text" placeholder="New Name" className="border-2 border-blue-600 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-300 placeholder-gray-400 text-black"/>
-                <input type="number" placeholder="$Price" className="border-2 border-blue-600 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-300 placeholder-gray-400 text-black"/>
-                <select className="border-2 border-blue-600 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-300 bg-white text-gray-800">
-                  <option value="">Select Category</option>
-                  <option value="Breakfast">Breakfast</option>
-                  <option value="Lunch">Lunch & Dinner</option>
-                  <option value="Drinks">Drinks</option>
-                </select>
-                <input type="text" placeholder="Image URL" className="border-2 border-blue-600 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-300 placeholder-gray-400 text-black"/>
-                <button className="bg-blue-600 text-white font-bold py-3 rounded-xl shadow-lg hover:scale-105 transition-transform">Update Food</button>
-              </div>
-            )}
+  <div className="flex flex-col space-y-4">
+    <h2 className="text-2xl font-bold text-blue-600 text-center">
+      Edit Food
+    </h2>
+
+    <input
+      type="text"
+      placeholder="Food Name"
+      value={name}
+      onChange={(e) => setName(e.target.value)}
+      className="border-2 border-blue-600 rounded-xl px-4 py-3 text-black"
+    />
+
+    <input
+      type="number"
+      placeholder="$Price"
+      value={price}
+      onChange={(e) => setPrice(e.target.value)}
+      className="border-2 border-blue-600 rounded-xl px-4 py-3 text-black"
+    />
+
+    <select
+      value={category}
+      onChange={(e) => setCategory(e.target.value)}
+      className="border-2 border-blue-600 rounded-xl px-4 py-3 bg-white text-black"
+    >
+      <option value="">Select Category</option>
+      <option value="Breakfast">Breakfast</option>
+      <option value="Lunch">Lunch & Dinner</option>
+      <option value="Drinks">Drinks</option>
+    </select>
+
+    <input
+      type="text"
+      placeholder="Image URL"
+      value={image}
+      onChange={(e) => setImage(e.target.value)}
+      className="border-2 border-blue-600 rounded-xl px-4 py-3 text-black"
+    />
+
+    <button
+      onClick={updateFood}
+      className="bg-blue-600 text-white font-bold py-3 rounded-xl"
+    >
+      Update Food
+    </button>
+  </div>
+)}
+
 
             
             {modal === "remove" && selectedFood && (

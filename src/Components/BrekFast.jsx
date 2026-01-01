@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import { Link } from "react-router-dom";
 
 function BrekFast() {
   const [foods , setFoods] = useState([])
@@ -53,7 +53,7 @@ function BrekFast() {
 
     
       <div className="flex flex-col sm:flex-row items-center justify-between gap-4 py-6">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-yellow-600">Breakfast</h1>
+        <Link to="/" className="text-3xl sm:text-4xl md:text-5xl font-bold text-yellow-600">Breakfast</Link>
 
         <div className="flex items-center gap-4">
           <select

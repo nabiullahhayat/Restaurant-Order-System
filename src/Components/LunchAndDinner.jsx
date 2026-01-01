@@ -1,4 +1,7 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+
+
 
 function Drinks() {
    const [foods , setFoods] = useState([])
@@ -50,7 +53,7 @@ function Drinks() {
       <title>Lunch & Dinner</title>
     
       <div className="flex flex-col sm:flex-row items-center justify-between gap-4 py-6">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-yellow-600">Lunch & Dinner</h1>
+        <Link to='/' className="text-3xl sm:text-4xl md:text-5xl font-bold text-yellow-600">Lunch & Dinner</Link>
 
         <div className="flex items-center gap-4">
           <select
