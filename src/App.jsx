@@ -6,12 +6,12 @@ import BrekFast from './Components/BrekFast';
 import LunchAndDinner from './Components/LunchAndDinner';
 import Drinks from './Components/Drinks';
 import MenusPage from './Pages/MenusPage';
-import AdminPenal from './Admin/AdminPenal';
 import SignUp from './Pages/SignUp';
 import ProtectedRoute from'./Admin/ProtectedRoute';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import OrderHistory from './Admin/OrderHistory';
+import AdminDashboard from './Admin/AdminDashbord';
 
 export const ItemsContext = createContext();
 
@@ -40,7 +40,7 @@ function App() {
         <Route path='/lunch' element={<LunchAndDinner />} />
         <Route path='/drinks' element={<Drinks />} />
         <Route path='/login' element={<SignUp />} />
-        <Route path='/admin' element={  <ProtectedRoute isAuth={isAuth}> <AdminPenal /> </ProtectedRoute>} />
+        <Route path='/admin' element={  <ProtectedRoute isAuth={isAuth}> <AdminDashboard /> </ProtectedRoute>} />
         <Route path='/history' element={  <ProtectedRoute isAuth={isAuth}> <OrderHistory /> </ProtectedRoute>} />
         </Routes>
     </ItemsContext.Provider>

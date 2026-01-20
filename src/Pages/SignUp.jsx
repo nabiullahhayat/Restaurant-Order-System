@@ -11,7 +11,7 @@ function SignUp() {
 
   const { login, setIsAuth } = useContext(ItemsContext);
   const navigate = useNavigate();
-
+  
   const handleLogin = () => {
  
     if (username === '' || password === '') {
